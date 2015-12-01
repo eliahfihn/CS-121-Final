@@ -1,0 +1,19 @@
+CS 121 Final Project Feature List
+Elliot Carson + Eliah Finn
+
+Basic Features:
+-	Read an inputted text file of lyrics
+-	Count the number of occurrences of each word
+-	Remove specified words like “a” “the” and “of”
+-	Return the list of frequencies as a bar graph
+-	Will also display unique words, longest words, number of different words used in each song
+Intermediate Features
+-	The returned list will also be displayed as a word cloud
+-	Phrases will be counted as well as individual words
+Advanced Features
+-	Will use web connectivity to find the top 40 songs
+-	Will save them as a text file
+-	Will use web connectivity to find the lyrics for these 40 songs
+-	Will save the lyrics as the text file that will be used for analyzing
+-	Will display frequency and beat map along with the word cloud
+-	Will generate random songs with the lyrics that appear together most often
