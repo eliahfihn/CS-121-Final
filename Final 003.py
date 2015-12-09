@@ -1,5 +1,6 @@
 from graphics import *
 import time
+import operator
 
 class Button:
     def __init__(self, win, center, width, height, label):
@@ -44,6 +45,7 @@ class Song:
                 self.freqs[i] = self.freqs[i] + 1
             else:
                 self.freqs[i] = 1
+        self.sorted = sorted(freqs.items(), key=operator.itemgetter(0))
     def getTitle(self):
         return self.tit
     def setTitle(self, newtit):
@@ -62,10 +64,17 @@ class Song:
         self.lyrics = newlyrics
     def __str__(self):
         return self.tit, self.artist
+
+def strlist(lis):
+    if lis == []:
+        return []
+    else:
+        return [str(lis[0])] + strlist(lis[1:])
     
 #def findSongs():
 
 #def findLyrics():
+def top15words
     
 def makeBarGraph(song, wn):
     a
@@ -111,28 +120,26 @@ def openSongWin(num, lis):
     #wait for a song to be selected and returns the song's number in the songlist
     pt = songWin.getMouse()
     i = 1
-    #prints to show if it worked. Will delete this later on
-    print(lis)
     #returns the button number that was clicked
     while i == 1:
         for butt in buttons1:
             if butt.clicked(pt):
                 songWin.close()
-                return lis.index(butt.getLabel())
+                return butt.getLabel()
         for butt in buttons2:
             if butt.clicked(pt):
                 songWin.close()
-                return lis.index(butt.getLabel())
+                return butt.getLabel()
         for butt in buttons3:
             if butt.clicked(pt):
                 songWin.close()
-                return lis.index(butt.getLabel())
+                return butt.getLabel()
         for butt in buttons4:
             if butt.clicked(pt):
                 songWin.close()
-                return lis.index(butt.getLabel())
+                return butt.getLabel()
     
-def openGUI(lis):
+def openGUI(lis, objlist):
     #initializes and sets up the first GUI.
     #Not nessicary but it looks cool
     makeIntroWin()
@@ -157,12 +164,12 @@ def openGUI(lis):
     while not exitbutton.clicked(pt):
         #opens the song chooser window if the button is clicked
         if choosefile.clicked(pt):
-            chosenSong = lis[openSongWin(20, lis)]
+            print(type(lis[1]))
+            a = openSongWin(20, lis)
+            chosenSong = str(a)
+            print(a)
             print(chosenSong)
             choosefile.setLabel(chosenSong)
-            chosenSong = getattr(getFreqs)
-            freqs = chosenSong()
-            print(freqs)
             #makeBarGraph(song, win)
             #makeWordCloud(song, win)
             #makePieChart(song, win)
@@ -235,11 +242,12 @@ def makeSongs():
     song17.setLyrics(lyricList[17])
     song18.setLyrics(lyricList[18])
     song19.setLyrics(lyricList[19])
-    print(song0.getTitle())
     return titList
     
 def main():
     titList = makeSongs()
-    openGUI(titList)    
+    #turns the list of objects into a useable list of strings
+    newlist = strlist(titList)
+    openGUI(newlist, titList)    
 
 main()
