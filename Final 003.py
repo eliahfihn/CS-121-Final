@@ -45,7 +45,7 @@ class Song:
                 self.freqs[i] = self.freqs[i] + 1
             else:
                 self.freqs[i] = 1
-        self.sorted = sorted(freqs.items(), key=operator.itemgetter(0))
+        #self.sorted = sorted(freqs.items(), key=operator.itemgetter(0))
     def getTitle(self):
         return self.tit
     def setTitle(self, newtit):
@@ -74,7 +74,8 @@ def strlist(lis):
 #def findSongs():
 
 #def findLyrics():
-def top15words
+def top15words():
+    a
     
 def makeBarGraph(song, wn):
     a
@@ -87,7 +88,7 @@ def makeIntroWin():
     introwin.setCoords(0.0, 0.0, 4.5, 3.0)
     logo = Image(Point(2.25, 1.5), '/Users/Elliot/Desktop/Songs/logo.png')
     logo.draw(introwin)
-    #time.sleep(2)
+    time.sleep(2)
     introwin.close()
     
 def openSongWin(num, lis):
